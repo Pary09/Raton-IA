@@ -65,7 +65,7 @@ public class RatonPR extends Mouse {
             pilaMovimientos.push(4);
             return Mouse.LEFT;
         }else if(!pilaMovimientos.isEmpty()){ //Si no se cumple ninguna condicion y la pila no está vacía, hay que ir hacia atras
-            switch(moveStack(pilaMovimientos.pop())){
+            switch(pilaMovimientos.pop()){
             case 1:
                 System.out.println("abajo");
                 return Mouse.DOWN;
