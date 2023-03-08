@@ -64,23 +64,8 @@ public class RatonPR extends Mouse {
         }else if(currentGrid.canGoLeft() && celdasVisitadas.get(GridToPair(currentGrid,4)) == null){
             pilaMovimientos.push(4);
             return Mouse.LEFT;
-        }else{ //Si no se cumple ninguna condicion, hay que ir hacia atras
-            switch(moveStack(pilaMovimientos.pop())){
-            case 1:
-                System.out.println("abajo");
-                return Mouse.DOWN;
-            case 2:
-                System.out.println("izq");
-                return Mouse.LEFT;
-            case 3:
-                System.out.println("arri");
-                return Mouse.UP;
-            case 4:
-                System.out.println("dere");
-                return Mouse.RIGHT;    
-            }
         }
-        return Mouse.BOMB;
+        return pilaMovimientos.pop();
     }
     
     public int moveStack(int movimiento){
