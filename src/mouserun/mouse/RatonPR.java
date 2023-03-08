@@ -18,6 +18,10 @@ public class RatonPR extends Mouse {
      * Variable para almacenar la ultima celda visitada
      */
     private Grid lastGrid;
+    /**
+     * Contador del numero de casillas
+     */
+    private int num_celdasVisitadas;
 
     /**
      * Variable para guardar el anterior movimiento realizado
@@ -53,15 +57,19 @@ public class RatonPR extends Mouse {
         celdasVisitadas.put(actual, currentGrid);
         //Ahora vemos hacia donde nos podemos mover
         if(currentGrid.canGoUp() && celdasVisitadas.get(GridToPair(currentGrid,1)) == null){
+            incExploredGrids();
             pilaMovimientos.push(1);
             return Mouse.UP;
         }else if((currentGrid.canGoRight() && celdasVisitadas.get(GridToPair(currentGrid,2)) == null)){
+            incExploredGrids();
             pilaMovimientos.push(2);
             return Mouse.RIGHT;
         }else if(currentGrid.canGoDown() && celdasVisitadas.get(GridToPair(currentGrid,3)) == null){
+            incExploredGrids();
             pilaMovimientos.push(3);
             return Mouse.DOWN;
         }else if(currentGrid.canGoLeft() && celdasVisitadas.get(GridToPair(currentGrid,4)) == null){
+            incExploredGrids();
             pilaMovimientos.push(4);
             return Mouse.LEFT;
         }else if(!pilaMovimientos.isEmpty()){ //Si no se cumple ninguna condicion y la pila no está vacía, hay que ir hacia atras
