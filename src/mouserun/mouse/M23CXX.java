@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package mouserun.mouse;
 
 import java.util.ArrayList;
@@ -12,7 +17,7 @@ import mouserun.game.Cheese;
  *
  * @author Domin
  */
-public class RatonPR extends Mouse {
+public class M23CXX extends Mouse {
 
     /**
      * Variable para almacenar la ultima celda visitada
@@ -42,7 +47,7 @@ public class RatonPR extends Mouse {
     /**
      * Constructor (Puedes modificar el nombre a tu gusto).
      */
-    public RatonPR() {
+    public M23CXX() {
         super("F_Alonso");
         celdasVisitadas = new HashMap<>();
         pilaMovimientos = new Stack<>();
@@ -75,16 +80,12 @@ public class RatonPR extends Mouse {
         }else if(!pilaMovimientos.isEmpty()){ //Si no se cumple ninguna condicion y la pila no está vacía, hay que ir hacia atras
             switch(pilaMovimientos.pop()){
             case 1:
-                System.out.println("abajo");
                 return Mouse.DOWN;
             case 2:
-                System.out.println("izq");
                 return Mouse.LEFT;
             case 3:
-                System.out.println("arri");
                 return Mouse.UP;
             case 4:
-                System.out.println("dere");
                 return Mouse.RIGHT;    
             }
         }
